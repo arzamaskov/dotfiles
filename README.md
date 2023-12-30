@@ -43,46 +43,46 @@ aom apr apr-util aspell autoconf automake bat bison brotli c-ares ca-certificate
 
 Leader key: `Space`
 
-- Open filemanager: `<leader><space>`
-- Find files: `<leader>sf`
-- Find recently opened files: `<leader>?`
-- Find buffers: `<leader>;`
-- Find by grep: `<leader>f`
-- Find current word by grep: `<leader>F`
-- Fuzzy search in current buffer: `<leader>/`
-- Find Telescope builtins: `<leader>ss`
-
-- Copy to the system clipboard: `<leader>y`
-- Paste from the system clipboard: `<leader>p`
-- Split or join current line: `<leader>j`
-- Move to the last insertion and insert: `gi`
-- Switch to VISUAL using last selection: `gv`
-- Lowercase: `gu`
-- Uppercase: `gU`
-
-- Toggle undo-tree: `<leader>u`
-- Close current buffer: `<leader>q`
-- Go to the next buffer: `gn`
-- Go to the previous buffer: `gp`
-- Go to previous end of word: `ge`
-
-- Open floating diagnostic message: `<leader>e`
-- Open document diagnostic list: `<leader>dq`
-- Open document diagnostic messages: `<leader>xx`
-- Open document symbols: `<leader>ds`
-- Format code: `<leader>cf`
-- Code actions: `<leader>ca`
-- Rename: `<leader>rn`
-
-- Go to definition: `gd`
-- Go to declaration: `gD`
-- Go to implementation: `gI`
-- Go to references: `gr`
-
-- Find git commit: `<leader>gc`
-- Search by git status: `<leader>gs`
-- Git hunk preview: `<leader>hp`
-- Toggle line blame: `<leader>lb`
-
-- Comment line: `gcc`
-- Comment blockwise: `gbc`
+Open filemanager: `<leader><space>`  
+Find files: `<leader>sf`  
+Find recently opened files: `<leader>?`  
+Find buffers: `<leader>;`  
+Find by grep: `<leader>f`  
+Find current word by grep: `<leader>F`  
+Fuzzy search in current buffer: `<leader>/`  
+Find Telescope builtins: `<leader>ss`  
+  
+Copy to the system clipboard: `<leader>y`  
+Paste from the system clipboard: `<leader>p`  
+Split or join current line: `<leader>j`  
+Move to the last insertion and insert: `gi`  
+Switch to VISUAL using last selection: `gv`  
+Lowercase: `gu`  
+Uppercase: `gU`  
+  
+Toggle undo-tree: `<leader>u`  
+Close current buffer: `<leader>q`  
+Go to the next buffer: `gn`  
+Go to the previous buffer: `gp`  
+Go to previous end of word: `ge`  
+  
+Open floating diagnostic message: `<leader>e`  
+Open document diagnostic list: `<leader>dq`  
+Open document diagnostic messages: `<leader>xx`  
+Open document symbols: `<leader>ds`  
+Format code: `<leader>cf`  
+Code actions: `<leader>ca`  
+Rename: `<leader>rn`  
+  
+Go to definition: `gd`  
+Go to declaration: `gD`  
+Go to implementation: `gI`  
+Go to references: `gr`  
+  
+Find git commit: `<leader>gc`  
+Search by git status: `<leader>gs`  
+Git hunk preview: `<leader>hp`  
+Toggle line blame: `<leader>lb`  
+  
+Comment line: `gcc`  
+Comment blockwise: `gbc`  
