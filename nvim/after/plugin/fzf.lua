@@ -1,0 +1,12 @@
+-- local bind = vim.keymap.set
+-- local opts = { silent = true, noremap = true }
+--
+-- bind('n', '<leader>;', ':Buffers<cr>', opts)
+-- bind('n', '<leader>t', ':Files<cr>', opts)
+-- bind('n', '<C-p>', ':GFiles<cr>', opts)
+-- bind('n', '<leader>f', ':Rg<space>', { silent = false })
+-- bind('n', '<leader>F', ':exec "Rg ".expand("<cword>")<cr>', opts)
+--
+-- bind('n', '<leader>wt', ':cd ~/.vimwiki | Files<cr>', opts)
+-- bind('n', '<leader>wf', ':cd ~/.vimwiki | Rg<space>', { silent = false })
+-- bind('n', '<leader>wF', ':cd ~/.vimwiki | exec "Rg ".expand("<cword>")<cr>', opts)

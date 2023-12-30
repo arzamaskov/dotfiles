@@ -1,0 +1,23 @@
+# ignore all files and directories in the var/cache directory
+# var/cache/*
+**/cache/
+
+# ignore all files with the extension .log
+# *.log
+
+# ignore all files and directories named "node_modules"
+node_modules
+
+# ignore all directories and their contents named ".git"
+.git/
+
+# include all files with the extension .txt, but ignore all other files
+# !*.txt
+
+# ignore all files and directories named "yarn"
+.yarn/
+
+# Exceptions
+!local_conf.php
+!plog.log
+!.env

@@ -1,0 +1,95 @@
+# MAPPINGS
+map shift+alt+]	next_tab
+map shift+alt+[	previous_tab
+map alt+w	close_tab
+map alt+q	close_os_window
+map alt+t	launch --cwd=current --type=tab
+map ctrl+shift+enter launch --cwd=current
+map alt+d launch --location=hsplit --cwd=current
+map alt+shift+d launch --location=vsplit --cwd=current
+# map cmd+t new_tab_with_cwd
+
+# FONT_SETTINGS
+font_family	        JetBrainsMono Nerd Font
+# bold_font 	        JetBrains Mono Bold Nerd Font Complete
+# italic_font     		JetBrains Mono Italic Nerd Font Complete
+# bold_italic_font  	JetBrains Mono Bold Italic Nerd Font Complete
+# font_size		12
+
+# SETTINGS
+scrollback_lines 10000
+copy_on_select clipboard
+strip_trailing_spaces smart
+enable_audio_bell no
+window_alert_on_bell yes
+editor nvim
+enabled_layouts splits:split_axis=horizontal
+
+# tab_bar_edge top
+# tab_bar_align left
+# tab_bar_margin_width       5.0
+# tab_bar_margin_height      7.5 7.5
+# tab_bar_style custom
+# tab_bar_min_tabs 1
+# tab_activity_symbol none
+# bell_on_tab no
+# tab_separator ""
+# tab_bar_margin_width 0.0
+# tab_bar_margin_height 0.0 0.0
+# tab_title_template "{f'{title[:30]}…' if title.rindex(title[-1]) + 1 > 30 else (title.center(6) if (title.rindex(title[-1]) + 1) % 2 == 0 else title.center(5))}"
+# active_tab_font_style   bold
+# Hide title bar
+# hide_window_decorations    yes
+# Pager
+# action_alias launch_pager  launch --stdin-add-formatting --type=overlay
+# map ctrl+shift+g           launch_pager --stdin-source=@last_cmd_output ~/.config/kitty/nvim-pager.py -n "Last command output"
+# map ctrl+shift+h           launch_pager --stdin-source=@screen_scrollback ~/.config/kitty/nvim-pager.py -n "Scrollback history"
+
+# BEGIN_KITTY_THEME
+# Solarized Dark Higher Contrast
+include current-theme.conf
+# END_KITTY_THEME
+
+# APPEARANCE
+# background            #001e26
+# foreground            #9bc1c2
+cursor                #4E9A06
+# selection_background  #003747
+# set `color0` when the text blends with the background
+# color0                #6e7b8d
+# color8                #006388
+# color1                #d01b24
+# color9                #f4153b
+# color2                #6bbe6c
+# color10               #50ee84
+# color3                #a57705
+# color11               #b17e28
+# color4                #2075c7
+# color12               #178dc7
+# color5                #c61b6e
+# color13               #e14d8e
+# color6                #259185
+# color14               #00b29e
+# color7                #e9e2cb
+# color15               #fcf4dc
+# selection_foreground #001e26
+
+window_padding_width 2
+# tab_bar_style powerline
+# active_tab_background   #9ec400
+
+# Tab bar colors Catputtin
+# active_tab_foreground   #EFF1F5
+# active_tab_background   #8839EF
+# inactive_tab_foreground #4C4F69
+# inactive_tab_background #9CA0B0
+# tab_bar_background      #BCC0CC
+
+# Tab bar colors Gruvbox
+# active_tab_foreground   #EFF1F5
+# active_tab_background   #f2e5bc
+# inactive_tab_foreground #4C4F69
+# inactive_tab_background #9CA0B0
+# tab_bar_background      #f2e5bc
+
+

@@ -1,0 +1,6 @@
+.DS_Store
+.php-cs-fixer.*
+.php_cs.cache
+sl.php
+boost_upgrade*
+mail_blocker*

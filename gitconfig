@@ -1,0 +1,23 @@
+[user]
+  name  = Andrey Arzamaskov
+  email = aarzamaskov@simtechdev.org
+[alias]
+  ch = checkout
+  cm  = commit -m
+  ac = commit -am
+  l  = "!git pull origin $(git current-branch) --rebase"
+  h  = "!git push origin $(git current-branch)"
+  lh = "!git l && git h"
+  hist = log --pretty=format:\"%h %ad | %s %d [%an]\" --graph --date=short
+[color]
+  diff   = auto
+  status = auto
+  branch = auto
+[core]
+  autocrlf = input
+  editor = nvim
+  pager = delta
+  excludesfile = ~/.config/git/ignore
+	fileMode = false
+[init]
+  defaultBranch = main

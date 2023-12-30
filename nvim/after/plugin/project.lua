@@ -1,0 +1,9 @@
+-- local bind = vim.keymap.set
+--
+-- require("project_nvim").setup({
+--   -- your configuration comes here
+--   -- or leave it empty to use the default settings
+--   -- refer to the configuration section below
+-- })
+--
+-- bind("n", "<F7>", ":lua require'telescope'.extensions.projects.projects{}<CR>", { remap = false, silent = true })

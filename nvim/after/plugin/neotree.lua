@@ -1,0 +1,62 @@
+-- require('neo-tree').setup({
+--   enable_diagnostics = false,
+--   default_component_configs = {
+--     git_status = {
+--       symbols = {
+--         -- Change type
+--         added     = "+", -- or "✚", but this is redundant info if you use git_status_colors on the name
+--         modified  = "~", -- or "", but this is redundant info if you use git_status_colors on the name
+--         deleted   = "x",-- this can only be used in the git_status source
+--         renamed   = "->",-- this can only be used in the git_status source
+--         -- Status type
+--         untracked = "a",
+--         ignored   = "i",
+--         unstaged  = "u",
+--         staged    = "s",
+--         conflict  = "",
+--       },
+--     },
+--   },
+--   -- A list of functions, each representing a global custom command
+--   -- that will be available in all sources (if not overridden in `opts[source_name].commands`)
+--   -- see `:h neo-tree-custom-commands-global`
+--   commands = {},
+--   window = {
+--     mappings = {
+--       ["o"] = "open",
+--     },
+--   },
+--   filesystem = {
+--     filtered_items = {
+--       hide_dotfiles = true,
+--       hide_gitignored = true,
+--     },
+--     follow_current_file = {
+--       enabled = true, -- This will find and focus the file in the active buffer every time
+--       --               -- the current file is changed while the tree is open.
+--       leave_dirs_open = true, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
+--     },
+--     window = {
+--       mappings = {
+--         ["o"] = "open",
+--       },
+--     },
+--   },
+--   buffers = {
+--     window = {
+--       mappings = {
+--         ["o"] = "open",
+--       },
+--     },
+--   },
+--   git_status = {
+--     window = {
+--       mappings = {
+--         ["o"] = "open",
+--       },
+--     },
+--   },
+--   -- vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
+-- })
+--
+-- vim.keymap.set('n', '<C-n>', ':Neotree reveal<cr>', { noremap = true, silent = true})

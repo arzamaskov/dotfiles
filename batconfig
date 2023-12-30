@@ -1,0 +1,4 @@
+--theme="rose-pine"
+--italic-text=always
+--map-syntax ".ignore:Git Ignore"
+--plain
