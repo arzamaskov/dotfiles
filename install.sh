@@ -8,7 +8,7 @@ NC='\033[0m'  # No Color
 
 packages="aom apr apr-util aspell autoconf automake bat bison brotli c-ares ca-certificates coreutils cscope curl dnsmasq exercism fontconfig freetype fzf gd gettext giflib git gmp gnu-getopt gnu-sed gnupg gnutls helix highway htop icu4c imath insect jansson jpeg jpeg-turbo jpeg-xl krb5 libassuan libavif libcbor libedit libevent libfido2 libgcrypt libgit2 libgpg-error libiconv libidn2 libksba libnghttp2 libpng libsodium libssh2 libtasn1 libtermkey libtiff libunistring libusb libuv libvmaf libvterm libxml2 libxmlsec1 libyaml libzip little-cms2 lua luajit luv lz4 m4 mailhog mkcert mpdecimal msgpack mysql ncdu ncurses neovim nettle nginx npth nspr nss oath-toolkit oniguruma openexr openldap openssl@1.1 openssl@3 p11-kit pass pass-otp pcre2 pinentry pkg-config protobuf@21 pygments python-certifi python@3.11 python@3.12 qrencode re2c readline ripgrep rtmpdump ruby smartmontools sqlite tree tree-sitter unbound unibilium webp wget xz zlib zstd"
 
-casks="appcleaner cyberduck firefox flameshot httpie itsycal kitty libreoffice numi nvalt obsidian slack telegram transmission tunnelblick vlc"
+casks="appcleaner boop cyberduck firefox flameshot httpie itsycal kitty keyboard-cleaner libreoffice numi nvalt obsidian slack telegram tomatobar transmission tunnelblick vlc"
 
 echo -e "Installing packages..."
 for package in $packages; do

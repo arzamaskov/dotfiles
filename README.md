@@ -18,18 +18,21 @@ wget -O main.zip https://github.com/arzamaskov/environment/archive/refs/heads/ma
 ## Applications
 
 - appcleaner
+- boop
 - cyberduck
 - firefox
 - flameshot
 - httpie
 - itsycal
 - kitty
+- keyboard-cleaner
 - libreoffice
 - numi
 - nvalt
 - obsidian
 - slack
 - telegram
+- tomatobar
 - transmission
 - tunnelblick
 - vlc
