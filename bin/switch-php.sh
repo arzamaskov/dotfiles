@@ -50,7 +50,7 @@ function get_php_version() {
             PHP_VERSION="8.2.13"
             ;;
         *)
-            echo "Invalid choice, PHP 8.1 will be set as default."
+            echo -e "${RED}Invalid choice, PHP 8.1 will be set as default.${NC}"
             PHP_VERSION="8.1.24"
             ;;
     esac
@@ -59,14 +59,13 @@ function get_php_version() {
 }
 
 function switch_php_version {
-    local is_phpfpm_running=$(lsof -i -n -P | rg php-fpm)
+    echo "Stopping PHP-FPM...";
 
-    if [[ $is_phpfpm_running ]]; then
-        echo "Stopping PHP-FPM...";
-        killall php-fpm || { echo -e "${RED}ERROR${NC}: Failed to kill php-fpm process."; exit 1; };
-        echo -e "${GREEN}Done.${NC}"
+    if pkill php-fpm; then
+        echo -e "${GREEN}Done.${NC}PHP-FPM successfully stopped.";
+    else
+        echo -e "${RED}ERROR${NC}: Failed to stop PHP-FPM.";
     fi
-
 
     echo "Switching PHP from to PHP $PHP_VERSION...";
     asdf global php $PHP_VERSION || { echo -e "${RED}ERROR${NC}: Failed to switch php version."; exit 1; };
