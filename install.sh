@@ -61,6 +61,7 @@ asdf plugin-add yarn
 asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 asdf plugin-add ruby
 asdf plugin-add php https://github.com/asdf-community/asdf-php.git
+asdf plugin-add racket https://github.com/vic/asdf-racket.git
 asdf install
 echo -e "${GREEN}Done.${NC}"
 
