@@ -1,7 +1,7 @@
-pcall(require, "impatient")
-
 require("autocmds")
-require("functions")
-require("options")
-require("mappings")
+require("core-options")
+require("core-keymap")
 require("plugins")
+require("plugins-options")
+require("plugins-keymap")
+require("colors")
