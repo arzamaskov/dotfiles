@@ -1,0 +1,18 @@
+<?php
+
+$config = new PhpCsFixer\Config();
+
+return $config->setRules([
+            '@Symfony' => true,
+            'full_opening_tag' => true,
+            'concat_space' => ['spacing' => 'one'],
+            'single_quote' => true,
+            'array_syntax' => ['syntax' => 'short'],
+            'yoda_style' => false,
+            'combine_consecutive_unsets' => true,
+            'no_alias_language_construct_call' => false,
+            'global_namespace_import' => ['import_classes' => true, 'import_constants' => true, 'import_functions' => true],
+            'no_useless_else' => true,
+            'group_import' => true,
+            'single_import_per_statement' => false,
+    ]);

@@ -40,6 +40,7 @@ cp "${develop_env_dir}/ripgreprc" "$HOME/.ripgreprc"
 cp "${develop_env_dir}/rgignore" "$HOME/.rgignore"
 cp "${develop_env_dir}/gitconfig" "$HOME/.gitconfig"
 cp "${develop_env_dir}/tool-versions" "$HOME/.tool-versions"
+cp "${develop_env_dir}/php-cs-fixer" "$HOME/.php-cs-fixer.php"
 
 cd $config_dir;
 mkdir -p bat git kitty nvim
@@ -66,9 +67,16 @@ asdf plugin-add yarn
 asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 asdf plugin-add ruby
 asdf plugin-add php https://github.com/asdf-community/asdf-php.git
+asdf plugin-add racket https://github.com/vic/asdf-racket.git
 asdf install
 echo -e "${GREEN}Done.${NC}"
 
 echo -e "Installing Oh-My-Zsh..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+echo -e "${GREEN}Done.${NC}"
+
+echo -e "Installing Php-cs-fixer..."
+wget https://cs.symfony.com/download/php-cs-fixer-v3.phar -O php-cs-fixer
+chmod a+x php-cs-fixer
+mv php-cs-fixer "$HOME/.local/bin/"
 echo -e "${GREEN}Done.${NC}"
