@@ -27,8 +27,8 @@ create-nginx-server ()
         exit 0;
     fi
 
-    local project_dirs=$(find . -maxdepth 1 -type d -name "*$path*" | sed 's/^\.\///g')
-
+    local pattern=$(echo "$path" | awk -F'.' '{print $1}')
+    local project_dirs=$(find . -maxdepth 1 -type d -name "*$pattern*" | sed 's/^\.\///g')
 
     options=($(echo "$project_dirs"))
     if [ "${#options[@]}" -eq 1 ]; then
