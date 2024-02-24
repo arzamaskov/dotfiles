@@ -49,6 +49,11 @@ cp "${develop_env_dir}/kittyconf" "$CONFIG_DIR/kitty/kitty.conf"
 cp -R "${develop_env_dir}/nvim/"* "$CONFIG_DIR/nvim/"
 echo -e "${GREEN}Done.${NC}"
 
+echo -e "Installing bat themes..."
+mkdir -p "$(bat --config-dir)/themes"
+cp -R "${develop_env_dir}/bat_themes/* "$(bat --config-dir)/themes"
+bat cache --build
+echo -e "${GREEN}Done.${NC}"
 
 echo -e "Installing asdf..."
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf
