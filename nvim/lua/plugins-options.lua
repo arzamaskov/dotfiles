@@ -12,7 +12,6 @@ vim.g.coc_global_extensions = {
   "coc-css",
   "coc-html",
   "coc-html-css-support",
-  "coc-markdownlint",
   "coc-json",
   "coc-phpls",
   "coc-tsserver",
@@ -312,10 +311,30 @@ require("gitsigns").setup({
 require("nvim-tree").setup({
   sort_by = "case_sensitive",
   view = {
-    width = 50,
+    adaptive_size = true,
+    width = 30,
   },
   renderer = {
     group_empty = true,
+    indent_width = 2,
+    highlight_opened_files = "all",
+    icons = {
+      web_devicons = {
+        file = {
+          enable = true,
+          color = true,
+        },
+        folder = {
+          enable = false,
+          color = false,
+        },
+      },
+      glyphs = {
+        folder = {
+          arrow_closed = "›",
+        },
+      },
+    },
   },
   git = {
     enable = false,
@@ -326,7 +345,10 @@ require("nvim-tree").setup({
     cygwin_support = false,
   },
   filters = {
-    dotfiles = true,
+    git_ignored = false,
+    custom = {
+      ".php-cs-fixer.cache",
+    },
   },
 })
 
