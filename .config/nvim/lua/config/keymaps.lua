@@ -1,3 +1,5 @@
+local fzf = require('config.fzf')
+
 -- System clipboard
 vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y', { desc = 'Yank to system clipboard' })
 vim.keymap.set({ 'n', 'v' }, '<leader>p', '"+p', { desc = 'Paste from system clipboard' })
@@ -15,4 +17,25 @@ vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeToggle<cr>', {
 
 vim.keymap.set('n', '<C-n>', '<cmd>NvimTreeFindFile<cr>', {
   desc = 'Reveal current file in tree',
+})
+
+-- Fuzzy finder
+vim.keymap.set('n', '<leader><space>', fzf.files, {
+  desc = 'Find files',
+})
+
+vim.keymap.set('n', '<leader>fR', fzf.recent_files, {
+  desc = 'Recent files in project',
+})
+
+vim.keymap.set('n', '<leader>;', fzf.buffers, {
+  desc = 'Buffers',
+})
+
+vim.keymap.set('n', '<leader>/', fzf.live_grep, {
+  desc = 'Search project',
+})
+
+vim.keymap.set('n', '<leader>fw', fzf.grep_word, {
+  desc = 'Search word under cursor',
 })

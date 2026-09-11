@@ -5,7 +5,14 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 require('config.options')
-require('config.keymaps')
+
+-- Install and load plugins first.
 require('config.plugins')
+
+-- Configure plugins.
 require('config.colorscheme')
 require('config.nvim-tree')
+require('config.fzf')
+
+-- Keymaps may depend on configured plugins.
+require('config.keymaps')
