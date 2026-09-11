@@ -48,7 +48,7 @@ opt.mouse = 'a'
 
 -- Timing
 opt.updatetime = 250
-opt.timeoutlen = 400
+opt.timeoutlen = 300
 
 -- Appearance
 opt.termguicolors = true

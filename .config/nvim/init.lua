@@ -16,7 +16,7 @@ require('config.fzf')
 require('config.treesitter')
 require('config.gitsigns')
 require('config.lsp')
-require('config.which-key')
 
 -- Keymaps may depend on configured plugins.
 require('config.keymaps')
+require('config.which-key')
