@@ -15,4 +15,8 @@ vim.pack.add({
     src = 'https://github.com/nvim-treesitter/nvim-treesitter',
     name = 'nvim-treesitter',
   },
+  {
+    src = 'https://github.com/lewis6991/gitsigns.nvim',
+    name = 'gitsigns',
+  },
 }, { load = true })

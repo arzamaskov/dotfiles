@@ -39,3 +39,12 @@ vim.keymap.set('n', '<leader>/', fzf.live_grep, {
 vim.keymap.set('n', '<leader>fw', fzf.grep_word, {
   desc = 'Search word under cursor',
 })
+
+-- Gitsigns
+vim.keymap.set('n', ']h', function()
+  require('gitsigns').nav_hunk('next')
+end, { desc = 'Next Git hunk' })
+
+vim.keymap.set('n', '[h', function()
+  require('gitsigns').nav_hunk('prev')
+end, { desc = 'Previous Git hunk' })
