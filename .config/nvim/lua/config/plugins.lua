@@ -11,4 +11,8 @@ vim.pack.add({
     src = 'https://github.com/ibhagwan/fzf-lua',
     name = 'fzf-lua',
   },
+  {
+    src = 'https://github.com/nvim-treesitter/nvim-treesitter',
+    name = 'nvim-treesitter',
+  },
 }, { load = true })

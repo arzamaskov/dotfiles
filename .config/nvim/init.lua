@@ -13,6 +13,7 @@ require('config.plugins')
 require('config.colorscheme')
 require('config.nvim-tree')
 require('config.fzf')
+require('config.treesitter')
 
 -- Keymaps may depend on configured plugins.
 require('config.keymaps')
