@@ -8,4 +8,11 @@ vim.keymap.set('n', '<leader>bd', '<cmd>bdelete<cr>', { desc = 'Delete buffer' }
 -- Search
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<cr>', { desc = 'Clear search highlight' })
 
+-- File tree
+vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeToggle<cr>', {
+  desc = 'Toggle file tree',
+})
 
+vim.keymap.set('n', '<C-n>', '<cmd>NvimTreeFindFile<cr>', {
+  desc = 'Reveal current file in tree',
+})
