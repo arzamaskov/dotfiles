@@ -1,0 +1,21 @@
+.DS_Store
+.php-cs-fixer.cache
+.php_cs.cache
+sl.php
+boost_upgrade*
+mail_blocker*
+nbproject/*
+dump.sql.gz
+.phpactor.json
+.twig-cs-fixer.cache
+*.code-workspace
+# .cursor/
+.vscode
+.idea/
+AGENT.md
+.cursorrules
+CONVENTIONS.md
+CLAUDE.md
+# AGENTS.md
+.claude
+**/.claude/settings.local.json
