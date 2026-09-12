@@ -1,63 +1,23 @@
-# The syntax is "key = value". The whitespace around the
-# equals doesn't matter.
-# background = 282c34
-# foreground = ffffff
-
-# Comments start with a `#` and are only valid on their own line.
-# Blank lines are ignored!
-
-keybind = ctrl+z=close_surface
-keybind = cmd+/=new_split:down
-keybind = chain=resize_split:down,80
-keybind = ctrl+d=unbind
-
-# Empty values reset the configuration to the default value
+# Font
 font-family = "FiraCode Nerd Font"
-# font-family = "JetBrainsMono Nerd Font"
 font-size = 14
 
-# theme = Apple System Colors Light
-# theme = Alabaster
-# theme = Solarized Dark Higher Contrast
-# theme = Builtin Solarized Dark
-# theme = Flexoki Light
-# theme = TokyoNight Moon
-# theme = Rose Pine Moon
+# Theme
 theme = GitHub Light Default
 
+# Cursor
 cursor-style = block
 cursor-style-blink = false
 cursor-color = #24292f
 cursor-text = #ffffff
 
-# background = 003747
-# cursor-color = 0be826
+# Keybindings
+keybind = ctrl+z=close_surface
+keybind = cmd+/=new_split:down
+keybind = chain=resize_split:down,80
+keybind = ctrl+d=unbind
 
-# theme = Builtin Light
-# palette = 0=#000000
-# palette = 1=#c72e0f
-# palette = 2=#008a00
-# palette = 3=#795e25
-# palette = 4=#007acc
-# palette = 5=#af00db
-# palette = 6=#56b6c2
-# palette = 7=#000000
-# palette = 8=#808080
-# palette = 9=#c72e0f
-# palette = 10=#008a00
-# palette = 11=#795e25
-# palette = 12=#007acc
-# palette = 13=#af00db
-# palette = 14=#56b6c2
-# palette = 15=#000000
-# background = #ffffff
-# foreground = #000000
-# cursor-color = #0be826
-# cursor-text = #000000
-# selection-background = #264f78
-# selection-foreground = #ffffff
-
-# theme = Campbell PowerShell
+# Window
 macos-titlebar-style = transparent
 maximize = true
 quit-after-last-window-closed = true
