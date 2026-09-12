@@ -14,6 +14,7 @@ plugins=(
 # Environment
 export EDITOR=nvim
 export VISUAL=nvim
+export SUDO_EDITOR=nvim
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
 NOTES_DIR="$HOME/Documents/notes"
@@ -78,7 +79,6 @@ zstyle ':completion:*' list-colors \
 # ---------------------------------------------------------------------------
 
 alias vim='nvim'
-alias sv='sudoedit'
 alias ivm='nvim'
 
 alias clr='clear'
