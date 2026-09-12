@@ -13,6 +13,9 @@ return {
       scroll = {
         enabled = false,
       },
+      notifier = {
+        enabled = false,
+      },
     },
   },
 
