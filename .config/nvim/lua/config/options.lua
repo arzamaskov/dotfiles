@@ -16,3 +16,6 @@ vim.g.snacks_animate = false
 
 -- Отключаем подсветку текущей строки
 vim.opt.cursorline = false
+
+-- Обводка для всех всплывающих окон
+vim.o.winborder = "single"

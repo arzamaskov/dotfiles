@@ -22,3 +22,8 @@ end, { desc = "Recent buffers" })
 -- Системный буфер обмена
 bind({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank to system clipboard" })
 bind({ "n", "v" }, "<leader>p", '"+p', { desc = "Paste from system clipboard" })
+
+-- TreeSJ
+bind("n", "<leader>j", "<cmd>TSJToggle<cr>", {
+  desc = "Toggle split/join",
+})
