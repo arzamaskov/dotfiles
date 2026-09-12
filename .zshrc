@@ -63,7 +63,11 @@ setopt HIST_NO_STORE
 setopt HIST_REDUCE_BLANKS
 
 # Colors for BSD ls on light terminal themes
-export LSCOLORS="exfxcxdxbxegedabagBxBx"
+if [[ "$OSTYPE" == darwin* ]]; then
+  export LSCOLORS="exfxcxdxbxegedabagBxBx"
+else
+  export LS_COLORS='di=1;34:ln=35:so=33:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=1;31:ow=1;31'
+fi
 
 # Completion colors for light terminal themes
 zstyle ':completion:*' list-colors \
