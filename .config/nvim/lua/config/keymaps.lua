@@ -3,12 +3,6 @@ local opts = { silent = true }
 
 -- Русская раскладка
 bind("i", "<C-х>", "<C-[>", opts)
-
-bind("n", "р", "h", opts)
-bind("n", "о", "gj", opts)
-bind("n", "л", "gk", opts)
-bind("n", "д", "l", opts)
-
 bind("i", "<C-г>", "<C-G>u<C-U>", opts)
 bind("i", "<C-ц>", "<C-G>u<C-W>", opts)
 
@@ -24,3 +18,7 @@ bind("n", "<leader>;", function()
     current = false,
   })
 end, { desc = "Recent buffers" })
+
+-- Системный буфер обмена
+bind({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank to system clipboard" })
+bind({ "n", "v" }, "<leader>p", '"+p', { desc = "Paste from system clipboard" })
