@@ -8,11 +8,11 @@ vim.o.langmap =
 -- Перенос длинных строк
 vim.opt.wrap = true
 
--- Вертикальная граница длины строки
-vim.opt.colorcolumn = "80"
-
 -- PHP / Laravel
 vim.g.lazyvim_php_lsp = "intelephense"
 
 -- Отключаем анимацию
 vim.g.snacks_animate = false
+
+-- Отключаем подсветку текущей строки
+vim.opt.cursorline = false
