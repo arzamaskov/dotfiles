@@ -27,5 +27,9 @@ map("n", "<leader>cp", function()
   vim.fn.setreg("+", path)
 end, { desc = "Copy relative file path" })
 
+-- Comments
+map("n", "<leader>cc", "gcc", { remap = true, desc = "Toggle comment" })
+map("x", "<leader>cc", "gc", { remap = true, desc = "Toggle comment" })
+
 -- TreeSJ
 map("n", "<leader>j", "<cmd>TSJToggle<cr>", { desc = "Toggle split/join" })
