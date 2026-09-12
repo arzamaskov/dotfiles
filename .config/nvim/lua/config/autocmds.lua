@@ -20,6 +20,8 @@ local group = vim.api.nvim_create_augroup("custom_float_highlights", { clear = t
 local function float_highlights()
   vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
   vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#d0d7de", bg = "NONE" })
+  -- Показываем ~ после конца файла
+  vim.api.nvim_set_hl(0, "EndOfBuffer", { link = "LineNr" })
 end
 
 float_highlights()

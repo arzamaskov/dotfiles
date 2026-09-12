@@ -19,3 +19,7 @@ vim.opt.cursorline = false
 
 -- Обводка для всех всплывающих окон
 vim.o.winborder = "single"
+
+local fillchars = vim.opt.fillchars:get()
+fillchars.eob = "~"
+vim.opt.fillchars = fillchars
