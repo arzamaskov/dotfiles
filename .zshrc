@@ -61,6 +61,9 @@ setopt HIST_VERIFY
 setopt HIST_NO_STORE
 setopt HIST_REDUCE_BLANKS
 
+# Colors for BSD ls on light terminal themes
+export LSCOLORS="exfxcxdxbxegedabagBxBx"
+
 # Completion colors for light terminal themes
 zstyle ':completion:*' list-colors \
   'di=1;34' \
