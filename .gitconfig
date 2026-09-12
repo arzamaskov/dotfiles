@@ -1,0 +1,37 @@
+[user]
+  name  = Andrey Arzamaskov
+  email = arzamaskov@gmail.com
+	signingkey = B5B841D20F67EE251A60ED38CD722010EE816835
+[alias]
+  ch = checkout
+  cm  = commit -m
+  ac = commit -am
+  l  = "!git pull origin $(git current-branch) --rebase"
+  h  = "!git push origin $(git current-branch)"
+  lh = "!git l && git h"
+  ; hist = log --pretty=format:\"%h %ad | %s %d [%an]\" --graph --date=short
+  hist = log --oneline --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[color]
+  diff   = auto
+  status = auto
+  branch = auto
+[core]
+  autocrlf = false
+  editor = nvim
+  ; pager = delta
+  excludesfile = ~/.config/git/ignore
+	fileMode = false
+	quotePath = false
+[init]
+  defaultBranch = main
+[commit]
+	gpgsign = true
+; [url "git@github.com:"]
+; 	insteadOf = https://github.com/
+[rerere]
+	enabled = true
+[safe]
+	directory = /Users/arzamaskov/Develop/magento
+[gpg]
+	format = openpgp
+	program = gpg
