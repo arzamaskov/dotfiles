@@ -74,14 +74,25 @@ config.keys = {
 		}),
 	},
 
+	-- WezTerm pane navigation
 	{
 		key = "phys:H",
-		mods = "CTRL",
+		mods = "ALT",
 		action = act.ActivatePaneDirection("Left"),
 	},
 	{
+		key = "phys:J",
+		mods = "ALT",
+		action = act.ActivatePaneDirection("Down"),
+	},
+	{
+		key = "phys:K",
+		mods = "ALT",
+		action = act.ActivatePaneDirection("Up"),
+	},
+	{
 		key = "phys:L",
-		mods = "CTRL",
+		mods = "ALT",
 		action = act.ActivatePaneDirection("Right"),
 	},
 
