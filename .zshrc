@@ -28,11 +28,22 @@ path=(
   "$HOME/.local/bin"
   "$HOME/.composer/vendor/bin"
   "$HOME/go/bin"
-  "$HOME/.antigravity/antigravity/bin"
-  "/opt/homebrew/opt/mysql@8.0/bin"
-  "/opt/homebrew/opt/dotnet/bin"
   $path
 )
+
+if [[ "$OSTYPE" == darwin* ]]; then
+  path=(
+    "$HOME/.antigravity/antigravity/bin"
+    "/opt/homebrew/opt/mysql@8.0/bin"
+    "/opt/homebrew/opt/dotnet/bin"
+    $path
+  )
+elif [[ "$OSTYPE" == linux* ]]; then
+  path=(
+    "/usr/local/go/bin"
+    $path
+  )
+fi
 
 # Docker completions must be in fpath before Oh My Zsh runs compinit
 [[ -d "$HOME/.docker/completions" ]] &&
