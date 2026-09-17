@@ -19,11 +19,22 @@ journal() {
 
     today)
       local md
-      md="$(date +%m-%d)"
+      md="$(date '+%m-%d')"
 
       awk -v md="$md" '
         /^[0-9]{4}-[0-9]{2}-[0-9]{2} / {
-          show = substr($0, 6, 5) == md
+          match_day = substr($0, 6, 5) == md
+
+          if (match_day && found) {
+            print "----------------------------------------"
+            print ""
+          }
+
+          if (match_day) {
+            found = 1
+          }
+
+          show = match_day
         }
 
         show {
