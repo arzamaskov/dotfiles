@@ -159,18 +159,6 @@ nu() {
   git_backup "$DATABASE_DIR" "database backup from: $date"
 }
 
-jsync() {
-  git_backup "$JOURNAL_DIR" "log from $(date '+%Y-%m-%d')"
-}
-
-j() {
-  nvim "$JOURNAL_DIR/index.txt"
-}
-
-jr() {
-  cat "$JOURNAL_DIR/index.txt"
-}
-
 # ---------------------------------------------------------------------------
 # PHP
 # ---------------------------------------------------------------------------
@@ -271,3 +259,11 @@ export PASSWORD_STORE_CLIP_TIME=30
 export PASSWORD_STORE_CHARACTER_SET_NO_SYMBOLS="[:digit:]"
 export PASSWORD_STORE_GPG_OPTS="-a"
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
+
+# ---------------------------------------------------------------------------
+# Custom functions
+# ---------------------------------------------------------------------------
+
+for file in "$HOME"/.config/zsh/functions/*.zsh(N); do
+  source "$file"
+done
