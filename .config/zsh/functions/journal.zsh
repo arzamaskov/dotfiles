@@ -1,10 +1,20 @@
 journal() {
-  local file="$HOME/journal/index.txt"
+  local file="$JOURNAL_DIR/index.txt"
   local command="${1:-open}"
 
   case "$command" in
     open)
-      nvim "$file"
+      local date
+      local weekday
+
+      date="$(date '+%Y-%m-%d')"
+      weekday="$(LC_TIME=C date '+%A')"
+
+      if ! grep -q "^${date} " "$file"; then
+        printf '\n\n%s %s\n\n' "$date" "$weekday" >> "$file"
+      fi
+
+      nvim "+/^${date} " "$file"
       ;;
 
     today)
@@ -31,10 +41,6 @@ journal() {
 
 jsync() {
   git_backup "$JOURNAL_DIR" "log from $(date '+%Y-%m-%d')"
-}
-
-j() {
-  nvim "$JOURNAL_DIR/index.txt"
 }
 
 jr() {
