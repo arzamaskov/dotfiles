@@ -4,17 +4,7 @@ journal() {
 
   case "$command" in
     open)
-      local date
-      local weekday
-
-      date="$(date '+%Y-%m-%d')"
-      weekday="$(LC_TIME=C date '+%A')"
-
-      if ! grep -q "^${date} " "$file"; then
-        printf '\n\n%s %s\n\n' "$date" "$weekday" >> "$file"
-      fi
-
-      nvim "+/^${date} " "$file"
+      nvim "$file"
       ;;
 
     today)
