@@ -169,7 +169,7 @@ journal_sync() {
 }
 
 journal_help() {
-  cat <<'EOF'
+  command cat <<'EOF'
 Usage:
   journal                  Open the journal
   journal today            Show this day across all years
@@ -191,8 +191,4 @@ Examples:
   journal search run
   journal search "Zone 2"
 EOF
-}
-
-jr() {
-  cat "$JOURNAL_DIR/index.txt"
 }
