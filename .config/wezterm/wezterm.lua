@@ -8,6 +8,7 @@ config.default_domain = "WSL:Ubuntu"
 
 -- Font
 config.font = wezterm.font_with_fallback({
+	"JetBrainsMono Nerd Font Mono",
 	"FiraCode Nerd Font Mono",
 	"FiraCode Nerd Font",
 	"Cascadia Mono",
@@ -57,7 +58,7 @@ config.colors = {
 
 config.window_frame = {
 	font = wezterm.font({
-		family = "FiraCode Nerd Font Mono",
+		family = "JetBrainsMono Nerd Font Mono",
 		weight = "Bold",
 	}),
 	font_size = 11,
