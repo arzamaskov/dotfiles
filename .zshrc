@@ -267,3 +267,12 @@ export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 for file in "$HOME"/.config/zsh/functions/*.zsh(N); do
   source "$file"
 done
+
+syncthing-tunnel() {
+    ssh -N \
+        -o ExitOnForwardFailure=yes \
+        -o ServerAliveInterval=60 \
+        -L 18384:127.0.0.1:8384 \
+        root@31.76.18.248 \
+        -p 8422
+}
