@@ -1,0 +1,56 @@
+model = "gpt-6.1-sol"
+model_reasoning_effort = "medium"
+[projects."/mnt/c/Users/uln.arzamaskov/.codex"]
+trust_level = "trusted"
+
+[projects."/home/arzamaskov/.codex"]
+trust_level = "trusted"
+
+[projects."/home/arzamaskov/Develop/corporate-portal"]
+trust_level = "trusted"
+
+[projects."/home/arzamaskov/Develop/snippetbox"]
+trust_level = "trusted"
+
+[projects."/home/arzamaskov"]
+trust_level = "trusted"
+
+[projects."/home/arzamaskov/Develop/share-portal"]
+trust_level = "trusted"
+
+[projects."/home/arzamaskov/Develop/corp-portal-go"]
+trust_level = "trusted"
+
+[projects."/home/arzamaskov/Develop/jekyll-template"]
+trust_level = "trusted"
+
+[projects."/home/arzamaskov/.config/nvim"]
+trust_level = "trusted"
+
+[projects."/home/arzamaskov/Develop/slotplanning"]
+trust_level = "trusted"
+
+[projects."/home/arzamaskov/Develop/wp2obsidian"]
+trust_level = "trusted"
+
+[notice.model_migrations]
+"gpt-5.3-codex" = "gpt-5.4"
+"gpt-5.2-codex" = "gpt-5.4"
+
+[tui]
+theme = "github"
+# status_line_use_colors = false
+status_line = [
+    "model-with-reasoning",
+    "context-remaining",
+    "five-hour-limit",
+    "weekly-limit",
+    "current-dir",
+]
+screen_reader_detection_done = true
+
+[tui.model_availability_nux]
+"gpt-5.5" = 1
+"gpt-5.6-sol" = 4
+gpt-6-astra = 4
+"gpt-6.1-sol" = 2
