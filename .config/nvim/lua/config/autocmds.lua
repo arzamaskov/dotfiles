@@ -11,17 +11,23 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- UI highlights
-local function set_ui_highlights()
-  vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
-  vim.api.nvim_set_hl(0, "FloatBorder", { link = "WinSeparator" })
-  vim.api.nvim_set_hl(0, "EndOfBuffer", { link = "LineNr" })
+local group = vim.api.nvim_create_augroup("custom_float_highlights", { clear = true })
+
+local function float_highlights()
+  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#1f2335" })
+  vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#565f89", bg = "#1f2335" })
+  vim.api.nvim_set_hl(0, "FloatTitle", { fg = "#7aa2f7", bg = "#1f2335", bold = true })
+
+  vim.api.nvim_set_hl(0, "Pmenu", { bg = "#1f2335" })
+  vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#2a2f4a" })
+  vim.api.nvim_set_hl(0, "PmenuBorder", { fg = "#565f89", bg = "#1f2335" })
 end
 
-set_ui_highlights()
+float_highlights()
 
 vim.api.nvim_create_autocmd("ColorScheme", {
-  group = ui_group,
-  callback = set_ui_highlights,
+  group = group,
+  callback = float_highlights,
 })
 
 -- Не проверять орфографию во всплывающей Markdown-документации
