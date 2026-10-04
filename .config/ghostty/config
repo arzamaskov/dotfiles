@@ -3,13 +3,8 @@ font-family = "FiraCode Nerd Font"
 font-size = 14
 
 # Theme
-theme = GitHub Light Default
-
-# Cursor
-cursor-style = block
-cursor-style-blink = false
-cursor-color = #24292f
-cursor-text = #ffffff
+theme = tokyonight
+background = #222436
 
 # Keybindings
 keybind = ctrl+z=close_surface

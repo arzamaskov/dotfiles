@@ -30,30 +30,9 @@ config.window_padding = {
 }
 
 -- Appearance
-config.color_scheme = "Github (Gogh)"
-
+config.color_scheme = "Tokyo Night"
 config.colors = {
-	ansi = {
-		"#24292f", -- black
-		"#cf222e", -- red
-		"#1a7f37", -- green
-		"#9a6700", -- yellow
-		"#0969da", -- blue
-		"#8250df", -- magenta
-		"#1b7c83", -- cyan
-		"#6e7781", -- white
-	},
-
-	brights = {
-		"#24292f",
-		"#a40e26",
-		"#116329",
-		"#7d4e00",
-		"#0550ae",
-		"#6639ba",
-		"#0a6e75",
-		"#24292f",
-	},
+	background = "#222436",
 }
 
 config.window_frame = {
