@@ -6,6 +6,14 @@ font-size = 14
 theme = tokyonight
 background = #222436
 
+# Cursor
+cursor-style = block
+cursor-style-blink = true
+cursor-color = #63e352
+cursor-text = #222436
+# Не превращать курсор в bar на shell prompt
+shell-integration-features = no-cursor
+
 # Keybindings
 keybind = ctrl+z=close_surface
 keybind = cmd+/=new_split:down
