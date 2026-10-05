@@ -38,7 +38,7 @@ trust_level = "trusted"
 "gpt-5.2-codex" = "gpt-5.4"
 
 [tui]
-theme = "github"
+theme = "tokyonight"
 # status_line_use_colors = false
 status_line = [
     "model-with-reasoning",
@@ -53,4 +53,4 @@ screen_reader_detection_done = true
 "gpt-5.5" = 1
 "gpt-5.6-sol" = 4
 gpt-6-astra = 4
-"gpt-6.1-sol" = 2
+"gpt-6.1-sol" = 4
