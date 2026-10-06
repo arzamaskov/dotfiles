@@ -17,3 +17,9 @@ vim.opt.fillchars = fillchars
 -- LazyVim / plugins
 vim.g.lazyvim_php_lsp = "intelephense"
 vim.g.snacks_animate = false
+
+vim.filetype.add({
+  extension = {
+    tmpl = "gotmpl",
+  },
+})
