@@ -45,6 +45,13 @@ config.window_frame = {
 
 -- Keybindings
 config.keys = {
+	-- Send Escape for Ctrl+[ regardless of the active keyboard layout.
+	{
+		key = "phys:LeftBracket",
+		mods = "CTRL",
+		action = act.SendString("\27"),
+	},
+
 	{
 		key = "\\",
 		mods = "ALT|SHIFT",
