@@ -1,91 +1,195 @@
+-- Mapping modules below may load plugins, so initialize pack support first.
+require("config.plugins")
+
 local map = vim.keymap.set
+local fzf = require("fzf-lua")
+local gs = require("gitsigns")
 
--- Русская раскладка в Insert mode
-map("i", "<C-х>", "<C-[>", { silent = true })
-map("i", "<C-г>", "<C-G>u<C-U>", { silent = true })
-map("i", "<C-ц>", "<C-G>u<C-W>", { silent = true })
+map({ "n", "i", "t" }, "<C-/>", function()
+  require("config.terminal").toggle()
+end, { desc = "Toggle terminal" })
+map({ "n", "i", "t" }, "<C-_>", function()
+  require("config.terminal").toggle()
+end, { desc = "Toggle terminal" })
 
--- Explorer
-map("n", "<C-n>", function()
-  Snacks.explorer.reveal()
-end, { desc = "Reveal file in explorer" })
+-- Insert mode: русская раскладка
+map("i", "<C-х>", "<Esc>")
+map("i", "<C-г>", "<C-u>")
+map("i", "<C-ц>", "<C-w>")
 
--- Buffers
-map("n", "<leader>;", function()
-  Snacks.picker.buffers({
-    sort_lastused = true,
-    current = false,
-  })
-end, { desc = "Recent buffers" })
-
--- System clipboard
-map({ "n", "x" }, "<leader>y", '"+y', { desc = "Yank to system clipboard" })
-map({ "n", "x" }, "<leader>p", '"+p', { desc = "Paste from system clipboard" })
-
-map("n", "<leader>cp", function()
-  local path = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":.")
-  vim.fn.setreg("+", path)
-end, { desc = "Copy relative file path" })
-
--- Comments
-map("n", "<leader>cc", "gcc", { remap = true, desc = "Toggle comment" })
-map("x", "<leader>cc", "gc", { remap = true, desc = "Toggle comment" })
-
--- TreeSJ
-map("n", "<leader>j", "<cmd>TSJToggle<cr>", { desc = "Toggle split/join" })
-
--- Journal
-local journal = vim.fn.expand("~/journal/index.txt")
-
-local function setup_journal_keymap(buf)
-  local path = vim.api.nvim_buf_get_name(buf)
-
-  if path ~= journal then
-    return
-  end
-
-  vim.keymap.set("n", "<leader>J", function()
-    local now = os.date("*t")
-    local weekdays = {
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-    }
-
-    local header = string.format("%04d-%02d-%02d %s", now.year, now.month, now.day, weekdays[now.wday])
-
-    local lines = vim.api.nvim_buf_get_lines(buf, 0, -1, false)
-
-    for _, line in ipairs(lines) do
-      if line == header then
-        vim.notify("Today's journal entry already exists")
-        return
-      end
+map("i", "<CR>", function()
+  if vim.fn.pumvisible() == 1 then
+    if vim.fn.complete_info({ "selected" }).selected >= 0 then
+      return "<C-y>"
     end
 
-    vim.api.nvim_buf_set_lines(buf, 0, 0, false, {
-      header,
-      "",
-      "",
-      "",
-    })
+    return "<C-e><CR>"
+  end
 
-    vim.api.nvim_win_set_cursor(0, { 3, 0 })
-    vim.cmd("startinsert")
-  end, {
-    buffer = buf,
-    desc = "Add today's journal entry",
+  return "<CR>"
+end, {
+  expr = true,
+  desc = "Accept completion or newline",
+})
+
+map("n", "<leader>cf", function()
+  local ft = vim.bo.filetype
+  local preferred_formatters = {
+    lua = "lua_ls",
+    go = "gopls",
+    gomod = "gopls",
+    gowork = "gopls",
+    gotmpl = "gopls",
+  }
+  local preferred = preferred_formatters[ft]
+  local clients = vim.lsp.get_clients({ bufnr = 0, method = "textDocument/formatting" })
+  local selected
+  if preferred then
+    for _, client in ipairs(clients) do
+      if client.name == preferred then
+        selected = client
+        break
+      end
+    end
+  elseif #clients == 1 then
+    selected = clients[1]
+  end
+  if not selected then
+    local message
+    if preferred then
+      message = "No " .. preferred .. " formatter attached"
+    elseif #clients == 0 then
+      message = "No formatter attached"
+    else
+      message = "More than one formatter attached"
+    end
+    vim.notify(message, vim.log.levels.WARN)
+    return
+  end
+  vim.lsp.buf.format({ id = selected.id })
+end, { desc = "Format buffer" })
+
+map("n", "<leader><leader>", fzf.files, {
+  desc = "Find files",
+})
+
+map("n", "<leader>fg", fzf.live_grep, {
+  desc = "Live grep",
+})
+
+map("n", "<leader>sw", fzf.grep_cword, {
+  desc = "Search word under cursor",
+})
+
+map("n", "<leader>;", fzf.buffers, {
+  desc = "Buffers",
+})
+
+map("n", "<leader>e", "<cmd>Explore<CR>", { desc = "Explorer" })
+
+map("n", "<leader>ss", fzf.lsp_document_symbols, {
+  desc = "Document symbols",
+})
+
+map("n", "<leader>fr", fzf.oldfiles, {
+  desc = "Recent files",
+})
+
+map("n", "<leader>fR", function()
+  fzf.oldfiles({
+    cwd_only = true,
+    include_current_session = true,
   })
-end
+end, {
+  desc = "Recent files (cwd)",
+})
 
-setup_journal_keymap(0)
+map("n", "]h", function()
+  gs.nav_hunk("next")
+end, { desc = "Next hunk" })
 
-vim.api.nvim_create_autocmd("BufEnter", {
-  callback = function(args)
-    setup_journal_keymap(args.buf)
-  end,
+map("n", "[h", function()
+  gs.nav_hunk("prev")
+end, { desc = "Previous hunk" })
+
+map("n", "<leader>gp", gs.preview_hunk, {
+  desc = "Preview hunk",
+})
+
+map("n", "<leader>cd", function()
+  vim.diagnostic.open_float({ scope = "line" })
+end, {
+  desc = "Line diagnostics",
+})
+
+map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {
+  desc = "Code action",
+})
+
+map("n", "<leader>xx", function()
+  vim.diagnostic.setqflist()
+end, {
+  desc = "All errors",
+})
+
+map("n", "<leader>qo", "<cmd>copen<CR>", {
+  desc = "Open quickfix",
+})
+
+map("n", "<leader>qc", "<cmd>cclose<CR>", {
+  desc = "Close quickfix",
+})
+map("n", "<leader>a", function()
+  fzf.grep({ input_prompt = "Grep > " })
+end, {
+  desc = "Find by grep",
+})
+
+map("n", "<leader>A", function()
+  fzf.grep({ resume = true })
+end, {
+  desc = "Repeat last grep",
+})
+
+-- Очистить подсветку обычного /
+map("n", "<Esc>", "<cmd>nohlsearch<CR>", {
+  desc = "Clear search highlight",
+})
+
+-- Переход между окнами
+map("n", "<C-h>", "<C-w>h")
+map("n", "<C-j>", "<C-w>j")
+map("n", "<C-k>", "<C-w>k")
+map("n", "<C-l>", "<C-w>l")
+
+-- Системный буфер обмена
+map({ "n", "v" }, "<leader>y", '"+y', {
+  desc = "Yank to clipboard",
+})
+
+map("n", "<leader>Y", '"+Y', {
+  desc = "Yank line to clipboard",
+})
+
+map({ "n", "v" }, "<leader>p", '"+p', {
+  desc = "Paste from clipboard",
+})
+
+map({ "n", "v" }, "<leader>P", '"+P', {
+  desc = "Paste before from clipboard",
+})
+
+map("n", "<leader>j", function()
+  require("treesj").toggle()
+end, {
+  desc = "Split/join",
+})
+
+map("n", "<leader>cp", function()
+  local path = vim.fn.expand("%:.")
+
+  vim.fn.setreg("+", path)
+  vim.notify(path)
+end, {
+  desc = "Copy relative path",
 })

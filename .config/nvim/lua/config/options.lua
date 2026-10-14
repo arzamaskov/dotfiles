@@ -1,25 +1,46 @@
--- Не синхронизируем регистры Vim с системным clipboard
-vim.opt.clipboard = ""
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
--- Русская раскладка в Normal mode
-vim.opt.langmap =
-  "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"
+-- Неиспользуемые language providers
+vim.g.loaded_node_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_ruby_provider = 0
 
-vim.opt.wrap = true
-vim.opt.cursorline = false
-vim.o.winborder = "single"
+local o = vim.opt
 
--- Показываем ~ после конца файла
-local fillchars = vim.opt.fillchars:get()
-fillchars.eob = "~"
-vim.opt.fillchars = fillchars
+-- Номера строк
+o.number = true
+o.relativenumber = true
 
--- LazyVim / plugins
-vim.g.lazyvim_php_lsp = "intelephense"
-vim.g.snacks_animate = false
+-- Отступы
+o.tabstop = 4
+o.shiftwidth = 4
+o.expandtab = true
 
-vim.filetype.add({
-  extension = {
-    tmpl = "gotmpl",
-  },
-})
+-- Поиск
+o.ignorecase = true
+o.smartcase = true
+
+-- Интерфейс
+o.signcolumn = "yes:2"
+o.showmode = true
+
+-- Скроллинг
+o.scrolloff = 4
+o.sidescrolloff = 8
+
+-- Не переносить длинные строки
+o.wrap = false
+
+-- Русскоязычная раскладка
+o.langmap =
+    "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ," ..
+    "фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"
+
+-- Окна
+o.splitright = true
+o.splitbelow = true
+
+o.completeopt = { "menuone", "noselect", "popup" }
+o.undofile = true
