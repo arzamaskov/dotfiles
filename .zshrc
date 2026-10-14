@@ -1,14 +1,11 @@
 # Oh My Zsh
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="bureau-light"
+ZSH_THEME="bureau"
 
 plugins=(
-  asdf
   fzf
   git
   web-search
-  you-should-use
-  pass
 )
 
 # Environment
