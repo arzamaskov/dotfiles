@@ -69,6 +69,9 @@ local function setup_keymaps()
   map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {
     desc = "Code action",
   })
+  map("n", "<leader>cr", vim.lsp.buf.rename, {
+    desc = "Rename symbol",
+  })
   map("n", "<leader>xx", handlers.show_all_errors, {
     desc = "All errors",
   })

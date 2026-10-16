@@ -65,6 +65,9 @@ local visual_action = mapping("x", "<leader>ca")
 assert(normal_action.callback == vim.lsp.buf.code_action, "normal code action mapping should call vim.lsp.buf.code_action")
 assert(visual_action.callback == vim.lsp.buf.code_action, "visual code action mapping should call vim.lsp.buf.code_action")
 
+local rename = mapping("n", "<leader>cr")
+assert(rename.callback == vim.lsp.buf.rename, "rename mapping should call vim.lsp.buf.rename")
+
 local grep_mapping = mapping("n", "<leader>a")
 local input = vim.fn.input
 vim.fn.input = function() error("grep mapping should use fzf-lua's prompt") end
@@ -72,5 +75,5 @@ grep_mapping.callback()
 vim.fn.input = input
 assert(#grep_calls == 1 and grep_calls[1].input_prompt == "Grep > ", "grep mapping should delegate its prompt to fzf-lua")
 
-print("PASS: line diagnostics and normal/visual code action mappings")
+print("PASS: line diagnostics and normal/visual code action mappings, and rename mapping")
 vim.cmd("qa!")
