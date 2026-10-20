@@ -136,6 +136,7 @@ function handlers.accept_completion_or_newline()
 end
 
 function handlers.format_buffer()
+  local bufnr = vim.api.nvim_get_current_buf()
   local ft = vim.bo.filetype
   local preferred_formatters = {
     lua = "lua_ls",
@@ -145,7 +146,7 @@ function handlers.format_buffer()
     gotmpl = "gopls",
   }
   local preferred = preferred_formatters[ft]
-  local clients = vim.lsp.get_clients({ bufnr = 0, method = "textDocument/formatting" })
+  local clients = vim.lsp.get_clients({ bufnr = bufnr, method = "textDocument/formatting" })
   local selected
   if preferred then
     for _, client in ipairs(clients) do
@@ -169,7 +170,36 @@ function handlers.format_buffer()
     vim.notify(message, vim.log.levels.WARN)
     return
   end
-  vim.lsp.buf.format({ id = selected.id })
+
+  if ft == "go" then
+    local line_count = vim.api.nvim_buf_line_count(bufnr)
+    local response = selected:request_sync("textDocument/codeAction", {
+      textDocument = vim.lsp.util.make_text_document_params(bufnr),
+      range = {
+        start = { line = 0, character = 0 },
+        ["end"] = { line = math.max(line_count - 1, 0), character = 0 },
+      },
+      context = { diagnostics = {}, only = { "source.organizeImports" } },
+    }, 2000, bufnr)
+
+    if not response or response.err then
+      local reason = response and response.err or "request timed out"
+      if type(reason) == "table" then
+        reason = reason.message or vim.inspect(reason)
+      end
+      vim.notify("Organize imports failed: " .. tostring(reason), vim.log.levels.ERROR)
+      return
+    end
+
+    for _, action in ipairs(response and response.result or {}) do
+      if action.kind == "source.organizeImports" and action.edit then
+        vim.lsp.util.apply_workspace_edit(action.edit, selected.offset_encoding)
+        break
+      end
+    end
+  end
+
+  vim.lsp.buf.format({ bufnr = bufnr, id = selected.id })
 end
 
 function handlers.find_recent_files_in_cwd()
