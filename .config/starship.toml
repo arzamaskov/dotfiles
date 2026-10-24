@@ -1,0 +1,44 @@
+add_newline = true
+
+format = """
+$time $directory$git_branch$git_status
+$character
+"""
+
+[directory]
+truncation_length = 0
+truncate_to_repo = false
+style = "bold cyan"
+format = "[$path]($style)"
+
+[git_branch]
+format = ' [\[$symbol$branch]($style)'
+symbol = "±"
+style = "bold white"
+
+[git_status]
+format = ' $all_status$ahead_behind[\]](white)'
+
+staged = '[●](bold green)'
+modified = '[●](bold yellow)'
+untracked = '[●](bold red)'
+renamed = '[●](bold yellow)'
+deleted = '[●](bold yellow)'
+conflicted = '[●](bold red)'
+stashed = '[✹](bold blue)'
+
+ahead = '[▴](cyan)'
+behind = '[▾](magenta)'
+diverged = '[▴](cyan)[▾](magenta)'
+
+[fill]
+symbol = " "
+
+[time]
+disabled = false
+time_format = "%H:%M:%S"
+format = '[\[$time\]](dimmed white)'
+
+[character]
+success_symbol = '[❯](green)'
+error_symbol = '[❯](red)'
