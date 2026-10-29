@@ -1,0 +1,191 @@
+{
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions": 
+    [
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "size": 0.3,
+                "split": "right",
+                "splitMode": "duplicate"
+            },
+            "id": "User.DuplicatePaneRight45",
+            "name": "Duplicate pane right (30%)"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "size": 0.3,
+                "split": "down",
+                "splitMode": "duplicate"
+            },
+            "id": "User.DuplicatePaneDown30",
+            "name": "Duplicate pane down (30%)"
+        },
+        {
+            "command": 
+            {
+                "action": "moveFocus",
+                "direction": "down"
+            },
+            "id": "User.FocusPaneDown",
+            "name": "Focus pane down"
+        },
+        {
+            "command": 
+            {
+                "action": "moveFocus",
+                "direction": "left"
+            },
+            "id": "User.FocusPaneLeft",
+            "name": "Focus pane left"
+        },
+        {
+            "command": 
+            {
+                "action": "moveFocus",
+                "direction": "up"
+            },
+            "id": "User.FocusPaneUp",
+            "name": "Focus pane up"
+        },
+        {
+            "command": 
+            {
+                "action": "moveFocus",
+                "direction": "right"
+            },
+            "id": "User.FocusPaneRight",
+            "name": "Focus pane right"
+        }
+    ],
+    "alwaysShowNotificationIcon": false,
+    "copyFormatting": "none",
+    "copyOnSelect": true,
+    "defaultInputScope": "alphanumericHalfWidth",
+    "defaultProfile": "{216fb6fa-7282-5a5c-933c-d74442748e9d}",
+    "disabledProfileSources": 
+    [
+        "Windows.Terminal.Azure",
+        "Windows.Terminal.VisualStudio"
+    ],
+    "firstWindowPreference": "defaultProfile",
+    "initialPosition": ",",
+    "keybindings": 
+    [
+        {
+            "id": "User.DuplicatePaneRight45",
+            "keys": "alt+shift+d"
+        },
+        {
+            "id": "User.FocusPaneUp",
+            "keys": "alt+k"
+        },
+        {
+            "id": "User.FocusPaneRight",
+            "keys": "alt+l"
+        },
+        {
+            "id": "User.DuplicatePaneDown30",
+            "keys": "alt+shift+s"
+        },
+        {
+            "id": "User.FocusPaneLeft",
+            "keys": "alt+h"
+        },
+        {
+            "id": "Terminal.CopyToClipboard",
+            "keys": "ctrl+shift+c"
+        },
+        {
+            "id": "User.FocusPaneDown",
+            "keys": "alt+j"
+        },
+        {
+            "id": "Terminal.PasteFromClipboard",
+            "keys": "ctrl+shift+v"
+        }
+    ],
+    "language": "en-US",
+    "launchMode": "maximized",
+    "newTabMenu": 
+    [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
+    "profiles": 
+    {
+        "defaults": 
+        {
+            "colorScheme": "Tango Dark",
+            "padding": "0",
+            "scrollbarState": "hidden"
+        },
+        "list": 
+        [
+            {
+                "colorScheme": "Campbell Powershell",
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "font": 
+                {
+                    "face": "FiraCode Nerd Font"
+                },
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "name": "Windows PowerShell"
+            },
+            {
+                "commandline": "%SystemRoot%\\System32\\cmd.exe",
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": false,
+                "name": "\u041a\u043e\u043c\u0430\u043d\u0434\u043d\u0430\u044f \u0441\u0442\u0440\u043e\u043a\u0430"
+            },
+            {
+                "antialiasingMode": "grayscale",
+                "bellStyle": "none",
+                "colorScheme": "Dimidium",
+                "cursorColor": null,
+                "experimental.retroTerminalEffect": false,
+                "font": 
+                {
+                    "face": "Fira Code Retina",
+                    "size": 12,
+                    "weight": "normal"
+                },
+                "guid": "{216fb6fa-7282-5a5c-933c-d74442748e9d}",
+                "hidden": false,
+                "intenseTextStyle": "bright",
+                "name": "Ubuntu",
+                "rightClickContextMenu": true,
+                "source": "Microsoft.WSL",
+                "suppressApplicationTitle": false
+            },
+            {
+                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+                "hidden": false,
+                "name": "PowerShell",
+                "source": "Windows.Terminal.PowershellCore"
+            },
+            {
+                "guid": "{2595cd9c-8f05-55ff-a1d4-93f3041ca67f}",
+                "hidden": false,
+                "name": "PowerShell Preview (msix)",
+                "source": "Windows.Terminal.PowershellCore"
+            }
+        ]
+    },
+    "schemes": [],
+    "tabSwitcherMode": "mru",
+    "tabWidthMode": "equal",
+    "theme": "dark",
+    "themes": [],
+    "useAcrylicInTabRow": false,
+    "warning.confirmCloseAllTabs": false,
+    "warning.inputService": false,
+    "warning.largePaste": false,
+    "warning.multiLinePaste": "never"
+}
