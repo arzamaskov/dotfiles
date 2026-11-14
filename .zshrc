@@ -6,6 +6,7 @@ plugins=(
   fzf
   git
   web-search
+  golang
 )
 
 # Environment
@@ -274,3 +275,6 @@ syncthing-tunnel() {
         root@31.76.18.248 \
         -p 8422
 }
+
+# kimi-code
+export PATH="/Users/arzamaskov/.kimi-code/bin:$PATH"
