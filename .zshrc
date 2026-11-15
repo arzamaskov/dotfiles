@@ -15,7 +15,7 @@ export VISUAL=nvim
 export SUDO_EDITOR=nvim
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
-NOTES_DIR="$HOME/Documents/notes"
+NOTES_DIR="$HOME/Documents/obsidian"
 DATABASE_DIR="$HOME/Documents/database"
 JOURNAL_DIR="$HOME/journal"
 
@@ -277,4 +277,11 @@ syncthing-tunnel() {
 }
 
 # kimi-code
-export PATH="/Users/arzamaskov/.kimi-code/bin:$PATH"
+if [[ -d "$HOME/.kimi-code/bin" ]]; then
+  export PATH="$HOME/.kimi-code/bin:$PATH"
+fi
+
+# opencode
+if [[ -d "$HOME/.opencode/bin" ]]; then
+  export PATH="$HOME/.opencode/bin:$PATH"
+fi
