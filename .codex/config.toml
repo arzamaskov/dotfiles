@@ -38,6 +38,21 @@ trust_level = "trusted"
 [projects."/home/arzamaskov/Develop/wp2obsidian"]
 trust_level = "trusted"
 
+[projects."/home/arzamaskov/Develop/greenlight"]
+trust_level = "trusted"
+
+[projects."/home/arzamaskov/Projects/sdc-registry"]
+trust_level = "trusted"
+
+[projects."/home/arzamaskov/Projects/share-portal"]
+trust_level = "trusted"
+
+[projects."/home/arzamaskov/Projects/jekyll-template"]
+trust_level = "trusted"
+
+[projects."/home/arzamaskov/Projects/phonebook"]
+trust_level = "trusted"
+
 [notice.model_migrations]
 "gpt-5.3-codex" = "gpt-5.4"
 "gpt-5.2-codex" = "gpt-5.4"
