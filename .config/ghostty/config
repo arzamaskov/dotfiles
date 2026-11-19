@@ -1,9 +1,9 @@
 # Font
 font-family = "FiraCode Nerd Font"
-font-size = 14
+font-size = 12
 
 # Theme
-theme = tokyonight
+# theme = tokyonight
 background = #222436
 
 # Cursor
@@ -28,3 +28,6 @@ quit-after-last-window-closed = true
 window-padding-x = 3
 window-padding-y = 2,1
 window-padding-balance = false
+
+gtk-titlebar = false
+window-show-tab-bar = auto
